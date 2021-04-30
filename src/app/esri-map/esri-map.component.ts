@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { loadModules } from 'esri-loader';
+import * as esri from 'esri';
+import esriMap from 'esri/map';
 
 @Component({
   selector: 'app-esri-map',
@@ -72,7 +74,7 @@ export class EsriMapComponent implements OnInit {
           SignInHelper,
           DeviceUtil,
         ]) => {
-          var map = new Map('map', {
+          var map: esriMap = new Map('map', {
             basemap: 'streets-vector',
             center: [-117.15, 32.68], // longitude, latitude
             zoom: 11,
